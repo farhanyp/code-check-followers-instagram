@@ -6,10 +6,8 @@ with open("followers_1.json", "r") as f:
 with open("following.json", "r") as f:
     following_data = json.load(f)
 
-# Ambil semua username dari followers
 followers_usernames = [item["string_list_data"][0]["value"] for item in followers_data]
 
-# Ambil data dari following yang tidak ada di followers
 not_follow_back = [
     {
         "username": item["title"],
@@ -19,7 +17,6 @@ not_follow_back = [
     if item["title"] not in followers_usernames
 ]
 
-# Visual tampilannya
 print("\n🚫  Orang yang tidak follow back kamu")
 print("======================================")
 
